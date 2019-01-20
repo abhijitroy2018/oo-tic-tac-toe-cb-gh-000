@@ -71,10 +71,39 @@ class TicTacToe # class starts
 
   # Processes a win combination array
   def won?
+    board_empty = @board.all? {|element| element == " "}
+    result_array = false
+    if board_empty
+      return false
+    else
+      WIN_COMBINATIONS.each do |win_combination|
+        winning_positions_taken = position_taken?(win_combination[0]) &&
+                                position_taken?(win_combination[1]) &&
+                                position_taken?(win_combination[2])
+
+        if winning_positions_taken
+          # All Xs
+          all_Xs = (@board[win_combination[0]] == "X" && @board[win_combination[1]] == "X" && @board[win_combination[2]] == "X")
+
+          # All Os
+          all_Os = (@board[win_combination[0]] == "O" && @board[win_combination[1]] == "O" && @board[win_combination[2]] == "O")
+
+          if all_Xs || all_Os
+            result_array = win_combination
+            # break
+          end
+        end
+      end
+    end
+    return result_array
+  end # end won?
+
+  # Checks if board is full
+  def full?
+    return !@board.include?(" ")
+  end
+
   
-
-  end # end won? 
-
 
 
 
