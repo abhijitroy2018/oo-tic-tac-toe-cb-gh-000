@@ -1,4 +1,4 @@
 # Object-Oriented Tic Tac Toe
-class TicTacToe
+class TicTacToe # class starts
 
-end
+end # class ends here
