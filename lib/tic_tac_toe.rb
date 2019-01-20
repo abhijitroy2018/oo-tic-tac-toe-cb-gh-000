@@ -103,7 +103,7 @@ class TicTacToe # class starts
     return !@board.include?(" ")
   end
 
-  # Checks if game is a tie 
+  # Checks if game is a tie
   def draw?
     !won? && full?
   end
@@ -122,8 +122,11 @@ class TicTacToe # class starts
     end
   end
 
+  # The main method which simulates the complete game
   
-  
+
+
+
 
 
 
