@@ -123,17 +123,18 @@ class TicTacToe # class starts
   end
 
   # The main method which simulates the complete game
-  def play 
-
+  def play
+    until over?
+      if turn_count < 10
+        turn
+      end
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+      # break
+    elsif draw?
+      puts "Cat's Game!"
+    end
   end
-
-
-
-
-
-
-
-
-
 
 end # class ends here
