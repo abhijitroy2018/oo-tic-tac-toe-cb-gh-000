@@ -103,6 +103,26 @@ class TicTacToe # class starts
     return !@board.include?(" ")
   end
 
+  # Checks if game is a tie 
+  def draw?
+    !won? && full?
+  end
+
+  # Checks if game is over
+  def over?
+    if won? || full? || draw?
+      return true
+    end
+  end
+
+  # Evaluates the moves, and confirms the winner
+  def winner
+    if won?
+      return @board[won?[0]]
+    end
+  end
+
+  
   
 
 
