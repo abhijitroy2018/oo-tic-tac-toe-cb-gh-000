@@ -123,7 +123,10 @@ class TicTacToe # class starts
   end
 
   # The main method which simulates the complete game
-  
+  def play 
+
+  end
+
 
 
 
