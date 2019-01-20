@@ -47,19 +47,33 @@ class TicTacToe # class starts
   end
 
   # Enacts a single complete turn
-  def turn(board)
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-    if valid_move?(board, index)
-      move(board, index, current_player(board))
-      display_board(board)
+    if valid_move?(index)
+      move(index, current_player)
+      display_board
     else
-      turn(board)
+      turn
     end
   end
+
+  # Counts the total #turns played
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
+
+  # Determines the player at the beginning of each turn_count
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
+  end
+
+  # Processes a win combination array
+  def won?
   
-    
+
+  end # end won? 
 
 
 
